@@ -1,0 +1,72 @@
+{
+ "version": "2.2.4",
+ "songName": "Too-Slow",
+ "artist": "LyricalMaxi, Kiv.FLP, MeDicenKay, Suo",
+ "charter": "Unknown",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf-unofficial",
+   "girlfriend": "gf-unofficial",
+   "opponent": "sonic.exe",
+   "opponentVocals": [
+    "Opponent"
+   ],
+   "playerVocals": [
+    "Player"
+   ]
+  },
+  "stage": "tooslow",
+  "noteStyle": "exe",
+  "ratings": {
+   "normal": 0,
+   "hard": 0
+  },
+  "album": "volume1",
+  "stickerPack": "default"
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.6",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 138,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 81739.1304347826,
+   "b": 188,
+   "bpm": 162,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 109887.278582931,
+   "b": 264,
+   "bpm": 167,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 132881.290558979,
+   "b": 328,
+   "bpm": 172,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 155206.871954328,
+   "b": 392,
+   "bpm": 177,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 166054.329581446,
+   "b": 424,
+   "bpm": 180,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

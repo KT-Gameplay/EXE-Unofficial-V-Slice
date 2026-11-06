@@ -1,0 +1,139 @@
+{
+	"renderType": "multisparrow",
+	"version": "1.0.1",
+	"offsets": [
+		80,
+		30
+	],
+	"danceEvery": 1,
+	"applyStageMatrix": false,
+	"scale": 1.3,
+	"name": "luis",
+	"cameraOffsets": [
+		-220,
+		130
+	],
+	"flipX": false,
+	"isPixel": false,
+	"singTime": 6.99999999999999,
+	"startingAnimation": "idle",
+	"healthIcon": {
+		"shouldBop": true,
+		"offsets": [
+			0,
+			0
+		],
+		"isPixel": false,
+		"scale": 1,
+		"flipX": false,
+		"id": "sonicexe"
+	},
+	"assetPath": "characters/story mode/luis",
+	"atlasSettings": {
+		"swfMode": true,
+		"applyStageMatrix": false,
+		"useRenderTexture": false,
+		"filterQuality": 1,
+		"cacheOnLoad": false
+	},
+	"animations": [
+		{
+			"offsets": [
+				-38,
+				-207
+			],
+			"frameIndices": [],
+			"prefix": "idle",
+			"name": "idle",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				174,
+				-205
+			],
+			"frameIndices": [],
+			"prefix": "left",
+			"name": "singLEFT",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				81,
+				-207
+			],
+			"frameIndices": [],
+			"prefix": "down",
+			"name": "singDOWN",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				-36,
+				-200
+			],
+			"frameIndices": [],
+			"prefix": "rigth",
+			"name": "singRIGHT",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				-29,
+				-93
+			],
+			"frameIndices": [],
+			"prefix": "up",
+			"name": "singUP",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				-69,
+				-190
+			],
+			"frameIndices": [],
+			"prefix": "sigma",
+			"name": "singDOWN-alt",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				-43,
+				-131
+			],
+			"frameIndices": [],
+			"prefix": "grito",
+			"name": "scream",
+			"looped": false,
+			"flipX": false,
+			"animType": "framelabel",
+			"flipY": false,
+			"frameRate": 24
+		}
+	]
+}

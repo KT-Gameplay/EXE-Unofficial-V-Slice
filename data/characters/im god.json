@@ -1,0 +1,49 @@
+{
+    "renderType": "animateatlas",
+    "version": "1.0.1",
+    "offsets": [
+        10,
+        430
+    ],
+    "danceEvery": 1,
+    "scale": 0.9,
+    "name": "anim",
+    "cameraOffsets": [
+        120,
+        500
+    ],
+    "flipX": false,
+    "isPixel": false,
+    "singTime": 6.99999999999999,
+    "startingAnimation": "idle",
+    "healthIcon": {
+        "id": "sonicexe"
+    },
+    "assetPath": "shared:characters/story mode/anim",
+    "animations": [
+        {
+            "frameIndices": [],
+            "prefix": "Símbolo 9",
+            "offsets": [
+                163,
+                334
+            ],
+            "frameRate": 24,
+            "name": "idle",
+            "looped": true,
+            "animType": "symbol"
+        },
+        {
+            "frameIndices": [],
+            "prefix": "Símbolo 9",
+            "offsets": [
+                161,
+                334
+            ],
+            "frameRate": 24,
+            "name": "god",
+            "looped": true,
+            "animType": "symbol"
+        }
+    ]
+}

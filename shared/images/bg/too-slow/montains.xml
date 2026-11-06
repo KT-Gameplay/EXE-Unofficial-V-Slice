@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="montains.png">
+	<!-- Created with Adobe Animate version 22.0.7.214 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="rio instancia 10000" x="0" y="0" width="1199" height="3364" rotated="true" />
+	<SubTexture name="rio instancia 10001" x="4629" y="0" width="1037" height="3360" frameX="-2" frameY="-162" frameWidth="3364" frameHeight="1199" rotated="true" />
+	<SubTexture name="rio instancia 10002" x="2402" y="0" width="1132" height="3359" frameX="-3" frameY="-67" frameWidth="3364" frameHeight="1199" rotated="true" />
+	<SubTexture name="rio instancia 10003" x="3536" y="0" width="1091" height="3360" frameX="0" frameY="-108" frameWidth="3364" frameHeight="1199" rotated="true" />
+	<SubTexture name="rio instancia 10004" x="1201" y="0" width="1199" height="3362" frameX="-2" frameY="0" frameWidth="3364" frameHeight="1199" rotated="true" />
+</TextureAtlas>

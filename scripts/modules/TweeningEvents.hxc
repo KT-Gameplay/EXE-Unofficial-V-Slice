@@ -1,0 +1,99 @@
+import flixel.tweens.FlxEase;
+import funkin.play.PlayState;
+import funkin.util.ReflectUtil;
+import funkin.modding.module.Module;
+import funkin.Conductor;
+
+class TweeningModule extends Module
+{
+  public function new()
+  {
+    super('TweeningModule');
+  }
+
+  var curChar:String = 'dad';
+
+  var hasCamTween:Bool = false;
+
+  function onSongLoaded(event)
+  {
+    super.onSongLoaded(event);
+
+    hasCamTween = false;
+
+    for(event2 in event.events)
+    {
+      if(event2.eventKind == 'Tweening Camera') hasCamTween = true;
+    }
+  }
+
+  function onSongEvent(event)
+  {
+    super.onSongEvent(event);
+
+    if(event.eventData.eventKind == 'FocusCamera')
+    {
+      switch(event.eventData.getInt('char'))
+      {
+        case 0:
+          curChar = 'dad';
+
+        case 1:
+          curChar = 'bf';
+
+        case 2:
+          curChar = 'gf';
+      }
+
+      //if(hasCamTween) event.cancel();
+    }
+
+    if(event.eventData.eventKind == 'Tweening Camera')
+    {
+      var x = event.eventData.getFloat('x');
+      var y = event.eventData.getFloat('y');
+      var dur = event.eventData.getFloat('duration');
+      var ease = event.eventData.getString('ease');
+      var easeFunc = ReflectUtil.field(FlxEase, ease);
+
+      var finalX = 0;
+      var finalY = 0;
+
+      if(curChar == 'bf')
+      {
+        finalX = PlayState.instance.currentStage.getBoyfriend().cameraFocusPoint.x + x;
+        finalY = PlayState.instance.currentStage.getBoyfriend().cameraFocusPoint.y + y;
+      }
+      if(curChar == 'dad')
+      {
+        finalX = PlayState.instance.currentStage.getDad().cameraFocusPoint.x + x;
+        finalY = PlayState.instance.currentStage.getDad().cameraFocusPoint.y + y;
+      }
+      if(curChar == 'gf')
+      {
+        finalX = PlayState.instance.currentStage.getGirlfriend().cameraFocusPoint.x + x;
+        finalY = PlayState.instance.currentStage.getGirlfriend().cameraFocusPoint.y + y;
+      }
+
+      PlayState.instance.tweenCameraToPosition(finalX, finalY, dur, easeFunc);
+    }
+
+    if(event.eventData.eventKind == 'Tween Camera Zoom')
+    {
+      var val1 = event.eventData.getString('value1');
+      var val2 = event.eventData.getString('value2');
+
+      if(val2 == null) val2 = '4, linear';
+
+      var zoom = Std.parseFloat(val1.split(',')[0]);
+
+      var time = Std.parseFloat(val2.split(',')[0]) ?? 0;
+      var duration = time;
+      var ease = val2.split(',')[1] ?? 'linear';
+
+      var easeFunc = ReflectUtil.field(FlxEase, ease);
+
+      PlayState.instance.tweenCameraZoom(zoom, duration, true, easeFunc);
+    }
+  }
+}

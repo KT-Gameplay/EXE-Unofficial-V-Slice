@@ -1,0 +1,144 @@
+import funkin.play.stage.Stage;
+import funkin.play.PlayState;
+import flixel.tweens.FlxTween;
+import funkin.graphics.FunkinSprite;
+import flixel.FlxSprite;
+import flixel.FlxG;
+import funkin.Paths;
+import funkin.Conductor;
+import funkin.audio.FunkinSound;
+
+class TooSlowStage extends Stage
+{
+    public function new()
+    {
+        super('tooslow');
+    }
+
+    var flashBackBG:Array<String> = ['static', 'mount', 'plant', 'floor', 'picoDead'];
+
+    var getcha:FlxSprite;
+    var god:FlxSprite;
+
+    var staticLol:FlxSprite;
+
+    override function buildStage()
+    {
+        super.buildStage();
+    }
+
+    function onSongLoaded(event)
+    {
+        super.onSongLoaded(event);
+
+        this.getBoyfriend().cameraFocusPoint.x = 1970;
+        this.getBoyfriend().cameraFocusPoint.y = 1290;
+
+        this.getGirlfriend().cameraFocusPoint.x = 250;
+        this.getGirlfriend().cameraFocusPoint.y = 590;
+
+        this.getDad().cameraFocusPoint.x = 1250;
+        this.getDad().cameraFocusPoint.y = 1290;
+
+        getcha = new FlxSprite();
+        getcha.frames = Paths.getSparrowAtlas('bg/too-slow/dialogue', 'shared');
+        getcha.animation.addByPrefix('idle', 'idle', 25, false);
+        getcha.cameras = [PlayState.instance.camCutscene];
+        getcha.scale.set(5, 5);
+        getcha.antialiasing = false;
+        getcha.screenCenter();
+        getcha.x -= 25;
+        getcha.y -= 90;
+        getcha.visible = false;
+        PlayState.instance.add(getcha);
+
+        god = new FlxSprite(0, FlxG.height * (PlayState.instance.playerStrumline.isDownscroll ? 0.6 : 0.2));
+        god.frames = Paths.getSparrowAtlas('bg/too-slow/lyricgod', 'shared');
+        god.animation.addByPrefix('i', 'i', 0, false);
+        god.animation.addByPrefix('am', 'am', 0, false);
+        god.animation.addByPrefix('god', 'god', 0, false);
+        god.animation.play('god');
+        god.cameras = [PlayState.instance.camCutscene];
+        god.scale.set(1, 1);
+        god.antialiasing = true;
+        god.screenCenter(0x01);
+        god.visible = false;
+        PlayState.instance.add(god);
+
+        staticLol = new FlxSprite();
+        staticLol.frames = Paths.getSparrowAtlas('bg/too-slow/screenstatic', 'shared');
+        staticLol.animation.addByPrefix('idle', 'screenSTATIC', 24);
+        staticLol.alpha = 0;
+        staticLol.cameras = [PlayState.instance.camCutscene];
+        PlayState.instance.add(staticLol);
+    }
+
+    function tweenStageProps(showFlashback:Bool, duration:Float)
+    {
+        for (name in this.namedProps.keys())
+        {
+            var prop = this.namedProps.get(name);
+
+            if (prop != null)
+            {
+                var isFlashback = flashBackBG.contains(name);
+
+                FlxTween.tween(prop, {
+                    alpha: (isFlashback == showFlashback) ? 1 : 0
+                }, duration);
+            }
+        }
+    }
+
+    function onStepHit(event)
+    {
+        super.onStepHit(event);
+
+        switch(event.step)
+        {
+            case 1312:
+                FlxTween.tween(this.getGirlfriend(), {alpha:0}, 2);
+                tweenStageProps(true, 2);
+
+            case 1524:
+                FlxTween.tween(this.getGirlfriend(), {alpha:1}, 4);
+                tweenStageProps(false, 4);
+        }
+    }
+
+    function onSongEvent(event)
+    {
+        super.onSongEvent(event);
+
+        if (event.eventData.eventKind == 'tooslowlyric')
+        {
+            switch(event.eventData.getString('value1'))
+            {
+                case 'xd':
+                    getcha.visible = true;
+                    getcha.animation.play('idle', true);
+
+                case 'i':
+                    getcha.visible = false;
+                    god.visible = true;
+                    god.animation.play('i', true);
+
+                case 'am':
+                    god.animation.play('am', true);
+
+                case 'god':
+                    god.animation.play('god', true);
+
+                case 'endlyrics':
+                    FlxTween.tween(god, {alpha:0}, Conductor.instance.beatLengthMs / 250);
+            }
+        }
+
+        if(event.eventData.eventKind == 'TooSlowStatic')
+        {
+            staticLol.alpha = 0.5;
+            staticLol.animation.play('idle');
+            FunkinSound.load(Paths.sound('staticBUZZ'), 1, false, false, true, true, function() {staticLol.alpha = 0.001;});
+        }
+    }
+}

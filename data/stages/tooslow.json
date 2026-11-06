@@ -1,0 +1,170 @@
+{
+ "version": "1.0.2",
+ "name": "Too Slow",
+ "props": [
+  {
+   "alpha": 0,
+   "animations": [
+    {
+     "looped": true,
+     "name": "idle",
+     "prefix": "static"
+    }
+   ],
+   "assetPath": "bg/too-slow/flashback/static-flashback",
+   "atlasSettings": null,
+   "name": "static",
+   "position": [-950, 450],
+   "scale": [
+	3,
+	1.5
+],
+   "startingAnimation": "idle"
+  },
+  {
+   "alpha": 0,
+   "assetPath": "bg/too-slow/flashback/idk",
+   "atlasSettings": null,
+   "name": "mount",
+   "position": [-651, 338],
+   "scale": 0.3602,
+   "startingAnimation": ""
+  },
+  {
+   "alpha": 0,
+   "assetPath": "bg/too-slow/flashback/plants",
+   "atlasSettings": null,
+   "name": "plant",
+   "position": [-400, 730],
+   "scale": 0.5257,
+   "startingAnimation": ""
+  },
+  {
+   "alpha": 0,
+   "assetPath": "bg/too-slow/flashback/ground",
+   "atlasSettings": null,
+   "name": "floor",
+   "position": [-1000, 974],
+   "scale": 1.4,
+   "startingAnimation": ""
+  },
+  {
+   "alpha": 0,
+   "assetPath": "bg/too-slow/flashback/pico_ded",
+   "atlasSettings": null,
+   "name": "picoDead",
+   "position": [370, 900],
+   "scale": 0.6,
+   "startingAnimation": ""
+  },
+  {
+   "assetPath": "bg/too-slow/fondo",
+   "atlasSettings": null,
+   "name": "fondo",
+   "position": [-950, -400],
+   "scale": 1.4,
+   "startingAnimation": ""
+  },
+  {
+   "assetPath": "bg/too-slow/bg3",
+   "atlasSettings": null,
+   "name": "bg3",
+   "position": [-950, -150],
+   "scale": 1.4,
+   "startingAnimation": ""
+  },
+  {
+   "animations": [
+    {
+     "assetPath": null,
+     "atlasSettings": null,
+     "frameRate": 12,
+     "looped": true,
+     "name": "idle",
+     "prefix": "rio",
+     "renderType": null
+    }
+   ],
+   "assetPath": "bg/too-slow/montains",
+   "atlasSettings": null,
+   "name": "montains",
+   "position": [-820, -95],
+   "scale": [
+	1.4,
+	1.39
+],
+   "startingAnimation": "idle"
+  },
+  {
+   "assetPath": "bg/too-slow/bg2",
+   "atlasSettings": null,
+   "name": "bg2",
+   "position": [-950, 285],
+   "scale": 1.4,
+   "startingAnimation": ""
+  },
+  {
+   "assetPath": "bg/too-slow/bg1",
+   "atlasSettings": null,
+   "name": "bg1",
+   "position": [-950, -635],
+   "scale": 1.4,
+   "startingAnimation": ""
+  },
+  {
+   "assetPath": "bg/too-slow/b1 front",
+   "atlasSettings": null,
+   "name": "b1_front",
+   "position": [-950, 820],
+   "scale": 1.4,
+   "startingAnimation": "",
+   "zIndex": 350
+  },
+  {
+   "animations": [
+    {
+     "assetPath": null,
+     "atlasSettings": null,
+     "looped": true,
+     "name": "idle",
+     "prefix": "Símbolo 10 instancia",
+     "renderType": null
+    }
+   ],
+   "assetPath": "bg/too-slow/ojos_tails",
+   "atlasSettings": null,
+   "name": "ojos_tails",
+   "position": [350, 1000],
+   "scale": 1.5,
+   "startingAnimation": "idle",
+   "zIndex": 351
+  },
+  {
+   "assetPath": "bg/too-slow/eggman",
+   "atlasSettings": null,
+   "name": "eggman",
+   "position": [1800, 1500],
+   "scale": 1.4,
+   "startingAnimation": "",
+   "zIndex": 352
+  }
+ ],
+ "characters": {
+  "bf": {
+   "cameraOffsets": [25, 25],
+   "position": [2045.8, 1691.9],
+   "zIndex": 300
+  },
+  "dad": {
+   "cameraOffsets": [150, -100],
+   "position": [759.35, 1390.4],
+   "zIndex": 200
+  },
+  "gf": {
+   "cameraOffsets": [0, 0],
+   "position": [1535.85, 1539.9],
+   "zIndex": 100
+  }
+ },
+ "cameraZoom": 0.7
+}
