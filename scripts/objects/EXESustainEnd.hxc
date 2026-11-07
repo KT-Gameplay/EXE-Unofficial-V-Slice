@@ -1,0 +1,37 @@
+import flixel.FlxSprite;
+import funkin.Paths;
+import funkin.play.notes.SustainTrail;
+import funkin.play.PlayState;
+
+class EXESustainEnd extends SustainTrail // hate u devs for making the end cap bigger - KT
+{
+  var style;
+  var end:FlxSprite;
+
+  override public function new(noteDirection:NoteDirection, sustainLength:Float, noteStyle:NoteStyle)
+  {
+    super(noteDirection, sustainLength, noteStyle);
+    style = noteStyle.id;
+
+    end = new FlxSprite();
+    end.frames = Paths.getSparrowAtlas('noteStyle/exe_holdEnds');
+    end.scale.set(0.694805194805195, 0.694805194805195);
+
+    end.animation.addByPrefix('left', 'left', 24, false);
+    end.animation.addByPrefix('down', 'down', 24, false);
+    end.animation.addByPrefix('up', 'up', 24, false);
+    end.animation.addByPrefix('right', 'right', 24, false);
+
+    end.animation.play(noteDirection.name);
+  }
+
+  override public function updateClipping(songTime:Float = 0):Void
+  {
+    if(style.toLowerCase() != 'exe') return;
+
+    this.uvtData[4 * 2] = end.frame.uv.left;
+    this.uvtData[4 * 2 + 1] = end.frame.uv.top;
+    this.uvtData[5 * 2] = end.frame.uv.right;
+    this.uvtData[6 * 2 + 1] = end.frame.uv.bottom;
+  }
+}
