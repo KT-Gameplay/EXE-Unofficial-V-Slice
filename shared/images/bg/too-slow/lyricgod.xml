@@ -1,6 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="lyricgod.png">
-<SubTexture name="i0000" x="0" y="163" width="103" height="22" frameX="0" frameY="-28" frameWidth="717" frameHeight="161" rotated="true" />
-<SubTexture name="am0000" x="719" y="0" width="375" height="161" frameX="0" frameY="0" frameWidth="717" frameHeight="161" />
-<SubTexture name="god0000" x="0" y="0" width="717" height="161" frameX="0" frameY="0" frameWidth="717" frameHeight="161" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.6 https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="lyricgod.png" width="163" height="1122" spritePadding="3" borderPadding="1">
+	<SubTexture name="i0000" x="1" y="1099" width="103" height="22" rotated="true" frameX="0" frameY="-28" frameWidth="717" frameHeight="161"/>
+	<SubTexture name="am0000" x="1" y="721" width="161" height="375" rotated="true" frameX="0" frameY="0" frameWidth="717" frameHeight="161"/>
+	<SubTexture name="god0000" x="1" y="1" width="161" height="717" rotated="true" frameX="0" frameY="0" frameWidth="717" frameHeight="161"/>
 </TextureAtlas>
